@@ -28,4 +28,10 @@ public class Author {
     @OneToMany(mappedBy = "author", cascade= CascadeType.ALL)
     private List<Book> bookList= new ArrayList<>();
 
+    public Author(String authorName, int authorAge, String emailId) {
+        this.authorName = authorName;
+        this.authorAge = authorAge;
+        this.emailId = emailId;
+
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.LiabraryManagementSystem.Controllers;
 
 import com.example.LiabraryManagementSystem.Entities.Student;
+import com.example.LiabraryManagementSystem.RequestDtos.ModifyPhoneNoRequest;
 import com.example.LiabraryManagementSystem.Services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +30,12 @@ public class StudentController {
         }catch (Exception e){
             return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
-
     }
+
+    @PutMapping("modifyPhoneNo")
+    public String modifyPhoneNO(@RequestBody ModifyPhoneNoRequest modifyPhoneNoRequest){
+        String result= studentService.modifyPhoneNo(modifyPhoneNoRequest);
+        return result;
+    }
+
 }

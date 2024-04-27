@@ -24,7 +24,6 @@ public class Student {
 
     private String phoneNo;
 
-    @JoinColumn
-    @ManyToOne
-    private Author author;
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    private LibraryCard libraryCard;
 }

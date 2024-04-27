@@ -28,7 +28,6 @@ public class Book {
 
     private Date publshDate;
 
-
     @JoinColumn
     @ManyToOne
     private Author author;
