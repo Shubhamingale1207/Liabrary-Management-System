@@ -7,6 +7,8 @@ import com.example.LiabraryManagementSystem.RequestDtos.AddAuthorRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AuthorService {
 
@@ -20,4 +22,7 @@ public class AuthorService {
         return "Author ahs been saved to db with Id "+ newAuthor.getAuthorId();
     }
 
+    public List<Author> getAllAuthors(){
+        return authorRepository.findAll();
+    }
 }
